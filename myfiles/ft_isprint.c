@@ -6,13 +6,13 @@
 /*   By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 22:35:03 by dpadovan          #+#    #+#             */
-/*   Updated: 2021/05/16 22:35:19 by dpadovan         ###   ########.fr       */
+/*   Updated: 2021/05/20 21:51:39 by dpadovan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 127)
+	if (c >= 32 && c <= 126)
 		return (1);
 	else
 		return (0);

@@ -6,16 +6,43 @@
 #    By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 19:23:16 by dpadovan          #+#    #+#              #
-#    Updated: 2021/05/18 19:23:17 by dpadovan         ###   ########.fr        #
+#    Updated: 2021/05/23 21:43:55 by dpadovan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME	=	libft.a
 
+MYLIB	=	libft.h
 
+CC		=	gcc
 
-all:
-	echo "testando 123"
+CFLAGS	=	-Wall -Wextra -Werror
 
+OBJS	=	${SRCS:.c=.o}
 
-daniel:
-	ls -mp
+LIB		=	ar -rcs
+
+RM		=	rm -f
+
+SRCS	=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
+			ft_strlen.c ft_tolower.c ft_toupper.c ft_strncmp.c ft_strlcpy.c \
+			ft_strchr.c ft_strrchr.c ft_strlcat.c ft_memset.c ft_bzero.c \
+			ft_atoi.c ft_memcpy.c
+
+all:		${NAME}
+
+${NAME}:	${OBJS} ${MYLIB} 
+			${LIB} ${NAME} ${OBJS}
+
+.c.o:
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+clean:
+			${RM} ${OBJS}
+
+fclean:		clean
+			${RM} ${NAME}
+
+re:			fclean all
+
+.PHONY:		all clean fclean re
