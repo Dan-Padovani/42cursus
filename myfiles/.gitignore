@@ -1,2 +1,5 @@
 t*.c
 *.out
+*.o
+libftTester/
+../Libftest/
