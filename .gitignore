@@ -3,3 +3,4 @@ t*.c
 libftTester/
 Libftest/
 dantests/
+.gitignore
