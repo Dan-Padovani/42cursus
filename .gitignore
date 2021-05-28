@@ -1,0 +1,5 @@
+t*.c
+*.out
+libftTester/
+Libftest/
+dantests/

@@ -5,27 +5,35 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/05/18 19:49:59 by dpadovan          #+#    #+#              #
-#    Updated: 2021/05/24 19:24:32 by dpadovan         ###   ########.fr        #
+#    Created: 2021/05/18 19:23:16 by dpadovan          #+#    #+#              #
+#    Updated: 2021/05/27 21:44:13 by dpadovan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	hello
+NAME	=	libft.a
 
-CC		=	gcc
+MYLIB	=	libft.h
+
+CC		=	clang
 
 CFLAGS	=	-Wall -Wextra -Werror
 
 OBJS	=	${SRCS:.c=.o}
 
+LIB		=	ar -rcs
+
 RM		=	rm -f
 
-SRCS	=	main.c fct.c
+SRCS	=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
+			ft_strlen.c ft_tolower.c ft_toupper.c ft_strncmp.c ft_strlcpy.c \
+			ft_strchr.c ft_strrchr.c ft_strlcat.c ft_memset.c ft_bzero.c \
+			ft_atoi.c ft_memcpy.c ft_memchr.c ft_memcmp.c ft_memccpy.c \
+			ft_memmove.c
 
-all:		${NAME}  
+all:		${NAME}
 
-${NAME}:	${OBJS}
-			${CC} -o ${NAME} ${OBJS} 
+${NAME}:	${OBJS} ${MYLIB} 
+			${LIB} ${NAME} ${OBJS}
 
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
