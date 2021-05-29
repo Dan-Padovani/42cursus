@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/23 15:18:54 by dpadovan          #+#    #+#             */
-/*   Updated: 2021/05/28 23:18:58 by dpadovan         ###   ########.fr       */
+/*   Created: 2021/05/29 00:22:56 by dpadovan          #+#    #+#             */
+/*   Updated: 2021/05/29 00:30:03 by dpadovan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
+	while (*s)
 	{
-		((unsigned char *)s)[i] = c;
-		i++;
+		write(fd, s, 1);
+		s++;
 	}
-	return (s);
 }
