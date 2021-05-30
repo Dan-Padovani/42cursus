@@ -6,7 +6,7 @@
 /*   By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:48:06 by dpadovan          #+#    #+#             */
-/*   Updated: 2021/05/29 23:08:59 by dpadovan         ###   ########.fr       */
+/*   Updated: 2021/05/30 00:41:36 by dpadovan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		j++;
 	}
 	n_str[i] = '\0';
-	return (n_str);	
+	return (n_str);
 }

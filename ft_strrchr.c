@@ -6,7 +6,7 @@
 /*   By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 01:06:33 by dpadovan          #+#    #+#             */
-/*   Updated: 2021/05/29 20:33:28 by dpadovan         ###   ########.fr       */
+/*   Updated: 2021/05/30 01:28:43 by dpadovan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ char	*ft_strrchr(const char *s, int c)
 	int	size;
 
 	size = ft_strlen(s);
-	while (size >= 0 && (char)c != s[size])
+	while (size >= 0)
 	{
+		if ((char)c == s[size])
+			return ((char *)s + size);
 		size--;
 	}
-	if ((char)c == s[size])
-		return ((char *)s + size);
 	return (NULL);
 }
