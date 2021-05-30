@@ -6,7 +6,7 @@
 #    By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 19:23:16 by dpadovan          #+#    #+#              #
-#    Updated: 2021/05/29 01:07:02 by dpadovan         ###   ########.fr        #
+#    Updated: 2021/05/29 23:11:41 by dpadovan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	libft.a
 
 MYLIB	=	libft.h
 
-CC		=	clang
+CC		=	gcc
 
 CFLAGS	=	-Wall -Wextra -Werror
 
@@ -33,7 +33,7 @@ PART1 	=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 			ft_memmove.c ft_strnstr.c ft_calloc.c ft_strdup.c
 
 PART2	=	ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c \
-
+			ft_substr.c
 all:		${NAME}
 
 ${NAME}:	${OBJS} ${MYLIB} 

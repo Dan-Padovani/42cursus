@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 01:06:33 by dpadovan          #+#    #+#             */
-/*   Updated: 2021/05/29 20:33:28 by dpadovan         ###   ########.fr       */
+/*   Created: 2021/05/29 18:48:06 by dpadovan          #+#    #+#             */
+/*   Updated: 2021/05/29 23:08:59 by dpadovan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	int	size;
+	char	*n_str;
+	size_t	i;
+	size_t	j;
 
-	size = ft_strlen(s);
-	while (size >= 0 && (char)c != s[size])
+	i = 0;
+	j = start;
+	n_str = (char *)malloc(len + 1);
+	if (*s == '\0' || n_str == NULL)
+		return (NULL);
+	while (i < len && j < ft_strlen(s))
 	{
-		size--;
+		n_str[i] = s[j];
+		i++;
+		j++;
 	}
-	if ((char)c == s[size])
-		return ((char *)s + size);
-	return (NULL);
+	n_str[i] = '\0';
+	return (n_str);	
 }
