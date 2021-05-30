@@ -6,7 +6,7 @@
 /*   By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 23:09:57 by dpadovan          #+#    #+#             */
-/*   Updated: 2021/05/30 00:26:05 by dpadovan         ###   ########.fr       */
+/*   Updated: 2021/05/30 11:40:38 by dpadovan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ptr = malloc(nmemb * size);
 	if (ptr == NULL)
 		return (NULL);
-	ft_memset(ptr, 0, nmemb * size);
+	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }

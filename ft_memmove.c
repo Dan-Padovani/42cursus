@@ -6,7 +6,7 @@
 /*   By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:52:53 by dpadovan          #+#    #+#             */
-/*   Updated: 2021/05/27 19:35:47 by dpadovan         ###   ########.fr       */
+/*   Updated: 2021/05/30 16:20:48 by dpadovan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if ((dest == NULL && src == NULL) || n == 0)
 		return (dest);
 	i = 0;
-	if (dest < src)
+	if (dest <= src)
 	{		
 		while (i < n)
 		{
