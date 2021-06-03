@@ -6,7 +6,7 @@
 #    By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 19:23:16 by dpadovan          #+#    #+#              #
-#    Updated: 2021/05/29 23:56:10 by dpadovan         ###   ########.fr        #
+#    Updated: 2021/06/02 21:42:20 by dpadovan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ PART1 	=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 			ft_memmove.c ft_strnstr.c ft_calloc.c ft_strdup.c
 
 PART2	=	ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c \
-			ft_substr.c
+			ft_substr.c ft_strjoin.c ft_itoa.c ft_strtrim.c
 all:		${NAME}
 
 ${NAME}:	${OBJS} ${MYLIB} 
