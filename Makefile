@@ -6,7 +6,7 @@
 #    By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 19:23:16 by dpadovan          #+#    #+#              #
-#    Updated: 2021/06/02 21:42:20 by dpadovan         ###   ########.fr        #
+#    Updated: 2021/06/03 00:13:58 by dpadovan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	libft.a
 
 MYLIB	=	libft.h
 
-CC		=	gcc
+CC		=	clang
 
 CFLAGS	=	-Wall -Wextra -Werror
 

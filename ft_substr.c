@@ -6,7 +6,7 @@
 /*   By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:48:06 by dpadovan          #+#    #+#             */
-/*   Updated: 2021/05/30 00:41:36 by dpadovan         ###   ########.fr       */
+/*   Updated: 2021/06/02 23:12:33 by dpadovan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	i = 0;
 	j = start;
 	n_str = (char *)malloc(len + 1);
-	if (*s == '\0' || n_str == NULL)
+	if (!n_str)
 		return (NULL);
 	while (i < len && j < ft_strlen(s))
 	{

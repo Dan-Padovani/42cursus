@@ -6,60 +6,48 @@
 /*   By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 18:20:06 by dpadovan          #+#    #+#             */
-/*   Updated: 2021/06/02 21:16:25 by dpadovan         ###   ########.fr       */
+/*   Updated: 2021/06/03 01:22:18 by dpadovan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int		intlen(int n)
+{
+	int		i;
+
+	i = 0;
+	while (n / 10 != 0)
+	{
+		n = n / 10;
+		i++;
+	}
+	return (i);
+}
+
 char    *ft_itoa(int n)
 {
     int 		i;
-	int			clone;
-	long int 	l_clone;
-	char 		*n_str;
+	int 		j;
+	long int 	ln;
+	char 		*str;
 
-	i = 0;
-	clone = n;
-	l_clone = n;
-	while (clone != 0)
+	ln = n;
+	j = n < 0;
+	if(j > 0)
+		ln = ln * -1;
+	i = intlen(n) + 1;	
+	str = (char *)malloc(i + j + 1);
+	if (!str)
+		return (NULL);
+	str [i + j] = '\0';
+	while (i >= 0)
 	{
-		clone = clone / 10;
-		i++;
-	}
-	if (n < 0)
-	{
-		l_clone = l_clone * -1;
-		n_str = (char *)malloc(i + 2);
-		n_str[0] = '-';
-		n_str[i + 1] = '\0';
-	}
-	else
-	{
-		if (!i)
-			i = 1;
-		n_str = (char *)malloc(i + 1);
-		n_str[i] = '\0';
 		i--;
-
+		str [i + j] = ln % 10 + '0';
+		ln = ln / 10;
 	}
-	if (n >= 0)
-	{
-		while (i >= 0)
-		{
-			n_str[i] = l_clone % 10 + '0';
-			l_clone = l_clone / 10;
-			i--;
-		}
-	}
-	else
-	{
-		while (i > 0)
-		{
-			n_str[i] = l_clone % 10 + '0';
-			l_clone = l_clone / 10;
-			i--;
-		}
-	}
-    return (n_str);
+	if (j > 0)
+		str [0] = '-';
+	return str;
 }
