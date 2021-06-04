@@ -6,7 +6,7 @@
 /*   By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 23:10:16 by dpadovan          #+#    #+#             */
-/*   Updated: 2021/06/03 00:14:33 by dpadovan         ###   ########.fr       */
+/*   Updated: 2021/06/03 01:51:07 by dpadovan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	end;
-	
+	int		end;
+
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	end = ft_strlen(s1);
