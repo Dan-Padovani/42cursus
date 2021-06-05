@@ -6,7 +6,7 @@
 /*   By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 18:33:53 by dpadovan          #+#    #+#             */
-/*   Updated: 2021/05/23 18:48:44 by dpadovan         ###   ########.fr       */
+/*   Updated: 2021/06/05 14:33:25 by dpadovan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		((unsigned char *)s)[i] = '\0';
+		((char *)s)[i] = '\0';
 		i++;
 	}
 }
