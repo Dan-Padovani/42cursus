@@ -6,13 +6,13 @@
 /*   By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 16:59:15 by dpadovan          #+#    #+#             */
-/*   Updated: 2021/06/04 19:10:15 by dpadovan         ###   ########.fr       */
+/*   Updated: 2021/06/05 22:25:57 by dpadovan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_str(const char *str, char c)
+/*static size_t		count_str(const char *str, char c)
 {
 	size_t		i;
 	size_t		total_wrd;
@@ -31,19 +31,28 @@ static size_t	count_str(const char *str, char c)
 	return (total_wrd);
 }
 
+static size_t		word_len(const char *str, char c)
+{
+	size_t	i;
+		
+	while (str[i] != c && str[i])
+		i++;
+	return i;
+}
+
 char	**ft_split(const char *s, char c)
 {
 	char	**n_str;
-	size_t	begin;
-	size_t	end;
+	size_t	word;
+	//size_t	end;
 	size_t	i;
 
-	n_str = (char **)malloc((count_str(s, c) + 1) * 8);
+	n_str = (char **)malloc(sizeof(char *) 
 	if (!s || !c || !n_str)
 		return (NULL);
 	begin = 0;
 	end = 0;
-	i = 0;
+	i = 0;	
 	while (i < count_str(s, c))
 	{
 		while (s[begin] == c)
@@ -55,7 +64,9 @@ char	**ft_split(const char *s, char c)
 		end++;
 		i++;
 		begin = end;
-	}
+	}	
 	n_str[i] = 0;
 	return (n_str);
-}
+}*/
+
+

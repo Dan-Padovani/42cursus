@@ -6,7 +6,7 @@
 /*   By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 23:52:44 by dpadovan          #+#    #+#             */
-/*   Updated: 2021/05/31 01:03:38 by dpadovan         ###   ########.fr       */
+/*   Updated: 2021/06/05 23:18:04 by dpadovan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	n_str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	i = 0;
-	if (n_str == NULL)
+	if (!n_str)
 		return (NULL);
 	while (i < ft_strlen(s1))
 	{
