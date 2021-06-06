@@ -2,4 +2,5 @@ t*.c
 *.out
 libftTester/
 Libftest/
-dantests/
+dan_tests
+libft-war-machine
