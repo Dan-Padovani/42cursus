@@ -4,3 +4,6 @@ libftTester/
 Libftest/
 dan_tests
 libft-war-machine
+my_*.c
+.vscode
+*.o

@@ -6,7 +6,7 @@
 #    By: dpadovan <dpadovan@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 19:23:16 by dpadovan          #+#    #+#              #
-#    Updated: 2021/06/06 19:04:39 by dpadovan         ###   ########.fr        #
+#    Updated: 2021/06/11 00:41:12 by dpadovan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ CFLAGS	=	-Wall -Wextra -Werror
 
 OBJS	=	${SRCS:.c=.o}
 
+OBJS_B	=	${SRCS_BONUS:.c=.o}
+
 LIB		=	ar -rcs
 
 RM		=	rm -f
@@ -32,7 +34,11 @@ PART1 	=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 			ft_atoi.c ft_memcpy.c ft_memchr.c ft_memcmp.c ft_memccpy.c \
 			ft_memmove.c ft_strnstr.c ft_calloc.c ft_strdup.c ft_substr.c \
 			ft_strjoin.c ft_itoa.c ft_strtrim.c ft_strmapi.c ft_split.c \
-			ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c \
+			ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c
+
+SRCS_BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+			ft_lstmap.c
 
 all:		${NAME}
 
@@ -42,8 +48,12 @@ ${NAME}:	${OBJS} ${MYLIB}
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
+bonus:		${OBJS_B} ${NAME} 
+			${LIB} ${NAME} ${OBJS_B}
+
 clean:
 			${RM} ${OBJS}
+			${RM} ${OBJS_B}
 
 fclean:		clean
 			${RM} ${NAME}
